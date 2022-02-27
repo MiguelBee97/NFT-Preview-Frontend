@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --cyan-overlay: hsl(178, 100%, 50%, 0.5);
+
+    --main-bg: hsl(217, 54%, 11%);
+    --card-bg: hsl(216, 50%, 16%);
+    --line: hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+
+    --header: 22px;
+    --normal: 18px;
+    --small: 15px;
+}
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--main-bg);
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--white);
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--cyan);
+}
+
+.container {
+    width: 90%;
+    max-width: 350px;
+    padding: 24px;
+    background-color: var(--card-bg);
+    color: var(--soft-blue);
+    border-radius: 15px;
+}
+
+.container-image {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    font-size: 0;
+}
+
+.image-main {
+    border-radius: 8px;
+    width: 100%;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: var(--cyan-overlay);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-overlay > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container-image:hover .image-overlay {
+    opacity: 1;
+}
+
+.container__title {
+    margin: 24px 0 12px;
+    font-weight: 600;
+    font-size: var(--header);
+    line-height: 28px;
+}
+
+.container__desc {
+    color: var(--soft-blue);
+    margin: 12px 0 16px;
+    font-weight: 300;
+    font-size: var(--normal);
+    line-height: 26px;
+}
+
+.icons {
+    margin: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+}
+
+.icons-item {
+    display: flex;
+}
+
+.icons-item img {
+    margin-right: 6px;
+}
+
+.price p {
+    color: var(--cyan);
+    font-weight: 600;
+}
+
+.avatar {
+    height: 33px;
+    margin-right: 16px;
+}
+
+.container__name {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
